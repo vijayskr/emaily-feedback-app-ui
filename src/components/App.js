@@ -1,35 +1,36 @@
-import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import Header from "./Header";
 //Dummy Compents to do the active routing
 
-const Header = () => {
-    return <h2>Header</h2>;
-};
+// const Header = () => {
+//   return <h2>Header</h2>;
+// };
 
 const Dashboard = () => {
-    return <h2>Dashboard</h2>;
+  return <h2>Dashboard</h2>;
 };
 
 const SurveyNew = () => {
-    return <h2>SurveyNew</h2>;
+  return <h2>SurveyNew</h2>;
 };
 
 const Landing = () => {
-    return <h2>Landing</h2>;
+  return <h2>Landing</h2>;
 };
 
 const App = () => {
-    return (
-        <div> {/* Left it for the CSS setup later */}
+  return (
+    <div className="container">
+      {/* Left it for the CSS setup later */}
+      <BrowserRouter>
         <Header />
-            <BrowserRouter>
-                <Route path='/' component={Landing} exact />
-                <Route path='/surveys' component={Dashboard} exact />
-                <Route path='/surveys/new' component={SurveyNew} exact />
-            </BrowserRouter>
-        </div>
-    );
-}
+        <Route path="/" component={Landing} exact />
+        <Route path="/surveys" component={Dashboard} exact />
+        <Route path="/surveys/new" component={SurveyNew} exact />
+      </BrowserRouter>
+    </div>
+  );
+};
 
 export default App;
